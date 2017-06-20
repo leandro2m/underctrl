@@ -26,7 +26,7 @@
 .chart-wrapper {
   background: #D5F0FD;
   /*border: 0px solid #e2e2e2;*/
-  border-radius: 3px;
+  border-radius: 4px;
   /*margin-bottom: 10px;*/
   align-content: all;
   margin-right: 7px;
@@ -43,6 +43,7 @@
   text-align: left;
   display:auto;
   background: #339AD2;
+  border-radius: 10px;
 }
 .chart-wrapper .eminstalacao {
   /*border-bottom: 1px solid #d7d7d7;*/
@@ -220,6 +221,9 @@ transform: translateX(-50%);
 }
 .description {
     font-size: 12px;
+}
+img {
+    width: 12%;
 }
 
 h3 {

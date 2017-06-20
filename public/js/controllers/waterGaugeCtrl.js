@@ -8,6 +8,29 @@ queue()
    //Start Transformations
 	var dataSet = apiData;
 	var dateFormat = d3.time.format("%m/%d/%Y %H:%M:%S");
+
+	lastpost = new Date(dataSet[0].datetime);
+	console.log("Data do Ultimo Post " + lastpost)
+	dataAtual = new Date();
+	console.log("Data e Hora atual " + dataAtual);
+
+	//calcula a diferença de datas em horas
+	var diffHoras = Math.abs(dataAtual.getTime() - lastpost.getTime()) / 3600000; 
+	console.log("Diferença de horas: " + diffHoras)
+
+	var imgStatus = new Image();
+	var divImgNetwork = document.getElementById('imgNetwork');
+	imgStatus.onload = function() {
+	  divImgNetwork.appendChild(imgStatus);
+	};
+	if (diffHoras < 2) {
+		console.log("Diferença maior que 2 horas");
+		imgStatus.src = './images/online.png';
+	}
+	else {
+		console.log("Diferenca menor que 2 horas");
+		imgStatus.src = './images/offline.png';
+	}
 	
 	dataSet.forEach(function(d) {
 		d.datetime = dateFormat.parse(d.datetime);
