@@ -722,7 +722,7 @@ function loadPieChart(elemenetId, value0, value1, value2, value3) {
 			
 		backgroundColor: "#D5F0FD",
 		title:{
-			text: "Historico dos últimos 5 dias"
+			text: "Histórico dos últimos 5 dias"
 		},
                 animationEnabled: true,
 		legend:{
