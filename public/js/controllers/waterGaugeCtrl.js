@@ -41,7 +41,7 @@ queue()
 			} 
 		else if (d.level3 == 1) {
 			d.total = 3;
-            d.changecolor = "#E53A0F";
+            d.changecolor = "#800080";
 			}
 		else if (d.level2 == 1) {
 			d.total = 2;
