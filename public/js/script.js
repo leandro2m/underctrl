@@ -482,7 +482,7 @@ function config ($stateProvider,$urlRouterProvider,$locationProvider) {
             },
             'body': {
                 templateUrl: "partials/singlescreen.html",
-                controller: 'waterGaugeCtrl'
+                controller: 'singleScreenCtrl'
             }
         }
     })
