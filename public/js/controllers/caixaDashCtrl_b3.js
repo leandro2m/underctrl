@@ -56,19 +56,19 @@ function makeGraphs(apiData,minDate,maxDate){
 		d.datetime = dateFormat.parse(d.datetime);
 		d.month = monthFormat(d.datetime);
 		if (d.level4 == 1) {
-			d.total = 100;
+			d.total = 6000;
 			} 
 		else if (d.level3 == 1) {
-			d.total = 90;
+			d.total = 5900;
 			}
 		else if (d.level2 == 1) {
-			d.total = 50;
+			d.total = 5000;
 			}
 		else if (d.level1 == 1) {
-			d.total = 20;
+			d.total = 2000;
 			}	
 		 else {
-			d.total = 10;
+			d.total = 0;
 		}	
 	});
 
@@ -107,16 +107,16 @@ function makeGraphs(apiData,minDate,maxDate){
 		.group(wLevel, "Nível da Água")
 		.renderArea(true)
 		.x(d3.time.scale().domain([minD, maxD]))
-		.y(d3.scale.linear().domain([0, 100]))
+		.y(d3.scale.linear().domain([0, 6000]))
 		.elasticY(false)
 		.elasticX(false)
 		.renderHorizontalGridLines(true)
     	.renderVerticalGridLines(true)
 		.brushOn(true)
 		.xAxisLabel("Data")
-		.yAxisLabel("% Volume da Cisterna") 
+		.yAxisLabel("Volume de Água") 
 		.ordinalColors(['blue'])
-		.yAxis().ticks(10);
+		.yAxis().ticks(4);
 
     // segundo chart - alarma períodos críticos
 	var criticalDaysChart = dc.barChart("#critical-days-chart");		

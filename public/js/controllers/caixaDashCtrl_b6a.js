@@ -114,7 +114,7 @@ function makeGraphs(apiData,minDate,maxDate){
     	.renderVerticalGridLines(true)
 		.brushOn(true)
 		.xAxisLabel("Data")
-		.yAxisLabel("% Volume da Caixa") 
+		.yAxisLabel("Volume de Água") 
 		.ordinalColors(['blue'])
 		.yAxis().ticks(4);
 

@@ -114,9 +114,9 @@ function makeGraphs(apiData,minDate,maxDate){
     	.renderVerticalGridLines(true)
 		.brushOn(true)
 		.xAxisLabel("Data")
-		.yAxisLabel("% Volume da Cisterna") 
+		.yAxisLabel("Volume de Água") 
 		.ordinalColors(['blue'])
-		.yAxis().ticks(10);
+		.yAxis().ticks(4);
 
     // segundo chart - alarma períodos críticos
 	var criticalDaysChart = dc.barChart("#critical-days-chart");		
