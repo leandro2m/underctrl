@@ -9,7 +9,7 @@ angular.module('App').controller('cisternasCtrl2', function($scope,$resource){
 
 	$scope.items = [];
 	
-	var apiData = $resource('/api/data/1/UCSCistern1/bl5');
+	var apiData = $resource('/api/data/1/UCSCistern2/bl5');
 	function buscaData() {
 		apiData.query(
 			function(items) {		

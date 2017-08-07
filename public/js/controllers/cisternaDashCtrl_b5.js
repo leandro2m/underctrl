@@ -1,7 +1,7 @@
-angular.module('App').controller('caixaDashCtrl_b5', function($scope,$resource){
+angular.module('App').controller('cisternaDashCtrl_b5', function($scope,$resource){
    
    queue()
-	  .defer(d3.json, "/api/data/1/UCSCistern1/bl5")
+	  .defer(d3.json, "/api/data/1/UCSCistern2/bl5")
 	  .await(renderData);
 	  
 function renderData(error,apiData) {
@@ -56,19 +56,19 @@ function makeGraphs(apiData,minDate,maxDate){
 		d.datetime = dateFormat.parse(d.datetime);
 		d.month = monthFormat(d.datetime);
 		if (d.level4 == 1) {
-			d.total = 100;
+			d.total = 1000000;
 			} 
 		else if (d.level3 == 1) {
-			d.total = 90;
+			d.total = 100000;
 			}
 		else if (d.level2 == 1) {
-			d.total = 50;
+			d.total = 50000;
 			}
 		else if (d.level1 == 1) {
-			d.total = 20;
+			d.total = 50000;
 			}	
 		 else {
-			d.total = 10;
+			d.total = 0;
 		}	
 	});
 
@@ -107,7 +107,7 @@ function makeGraphs(apiData,minDate,maxDate){
 		.group(wLevel, "Nível da Água")
 		.renderArea(true)
 		.x(d3.time.scale().domain([minD, maxD]))
-		.y(d3.scale.linear().domain([0, 100]))
+		.y(d3.scale.linear().domain([0, 100000]))
 		.elasticY(false)
 		.elasticX(false)
 		.renderHorizontalGridLines(true)

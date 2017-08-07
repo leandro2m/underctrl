@@ -26,10 +26,10 @@ router.get('/data', ctrlReservoir.rd_data);
 router.get('/data_last', ctrlReservoir.rd_data_last);
 // Rota para Water Gauge
 router.get('/data/1/latest', ctrlReservoir.rd_data_latest);
-router.get('/data/1/UCSCistern1', ctrlReservoir.rd_data_C);
+router.get('/data/1/UCSCistern1', ctrlReservoir.rd_data_C1);
 //Rotas para Cisterna
 router.get('/data/1/UCSCistern1/bl2', ctrlReservoir.rd_data_C1);
-router.get('/data/1/UCSCistern1/bl5', ctrlReservoir.rd_data_C2);
+router.get('/data/1/UCSCistern2/bl5', ctrlReservoir.rd_data_C2);
 //Rotas das Caixas D agua
 //router.get('/data/1/UCSReserv1', ctrlReservoir.rd_data_R1);
 router.get('/data/1/UCSReserv1/bl1', ctrlReservoir.rd_data_R1bl1); //Caixa D Agua Bloco 1

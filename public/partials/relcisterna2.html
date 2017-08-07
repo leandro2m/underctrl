@@ -22,7 +22,6 @@
         <thead>
             <tr>
                 <th>Data</th>
-                <th>Bloco</th>
                 <th>Nível</th>
                 <th>Temperatura</th>
                 <th>Umidade</th>
@@ -31,9 +30,8 @@
         <tbody>
            <tr ng-repeat="item in items | limitTo: lmt">
                 <td>{{item.datetime}}</td>
-                <td>{{item.blocoid}}
-                <td ng-if = "item.level4 =='1' && item.level3 =='1' && item.level2 =='1' && item.level1 =='1'"><font color="red"><strong>Risco de Vazamento - Nível 4</strong></font></td>
-                <td ng-if = "item.level4 =='0' && item.level3 =='1' && item.level2 =='1' && item.level1 =='1'"><font color="red"><strong>Risco de Vazamento - Nível 3</strong></font></td>
+                <td ng-if = "item.level4 =='1' && item.level3 =='1' && item.level2 =='1' && item.level1 =='1'"><font color="green"><strong>Cheio - Nível 4</strong></font></td>
+                <td ng-if = "item.level4 =='0' && item.level3 =='1' && item.level2 =='1' && item.level1 =='1'"><font color="green"><strong>Cheio - Nível 3</strong></font></td>
                 <td ng-if = "item.level4 =='0' && item.level3 =='0' && item.level2 =='1' && item.level1 == '1'"><font color="green"><b>Cheio - Nível 2</b></font></td>
                 <td ng-if = "item.level4 =='0' && item.level3 =='0' && item.level2 =='0' && item.level1 =='1'"><font color="#D2CA0D"><strong>Médio - Nível 1</strong></td>
                 <td ng-if = "item.level4 =='0' && item.level3 =='0' && item.level2 =='0' && item.level1 =='0'"><font color="red"><strong> <b>Crítico - Nível 0</b></strong></td>

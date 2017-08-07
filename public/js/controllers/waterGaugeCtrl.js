@@ -86,13 +86,21 @@ queue()
 	sensorDim.filter(function(d) {return d === 'UCSCistern2'});
 	blocoDim.filter(function(d) {return d == 0});
 	if (timeDim.top(1)[0] != null) {
-		var lastVolC2 = timeDim.top(1)[0].total;
-		var colorC2 = timeDim.top(1)[0].changecolor;
+			if (timeDim.top(1)[0].total == 3) {
+				var lastVolC2 = timeDim.top(1)[0].total;
+				var colorC2 = "#008100" 
+			}
+			else {
+				var lastVolC2 = timeDim.top(1)[0].total;
+				var colorC2 = timeDim.top(1)[0].changecolor;  
+			}
+		
 	}
 	else {
 		var lastVolC2 = 0;
 		var colorC2 =  "#E53A0F";
 	}
+	console.log("Cor da Cisterna 2: "  + colorC2)
 	
 	// ultima leitura Caixa Bloco 1
 	sensorDim.filterAll();

@@ -74,20 +74,7 @@ module.exports.rd_data_latest = function(req, res,next) {
     }
 
 
-module.exports.rd_data_C = function(req, res,next) {
-//app.get('/api/data/1/UCSCistern1', function(req, res, next) {
-        mongoose.model('Ws').find({"sensorid": "UCSCistern1"}).sort({$natural:-1}).limit(5800).exec(function (err, ws) {
-              if (err) {
-                  return console.error(err);
-              } else {
-                  res.format({
-                    json: function(){
-                        res.json(ws);
-                    }
-                });
-              }     
-        });
-    }
+
 //API Cisterna 1  
 module.exports.rd_data_C1 = function(req, res,next) {
 //app.get('/api/data/1/UCSCistern1/bl2', function(req, res, next) {
@@ -106,7 +93,7 @@ module.exports.rd_data_C1 = function(req, res,next) {
 //API Cisterna 2
 module.exports.rd_data_C2 = function(req, res,next) {
 //app.get('/api/data/1/UCSCistern1/bl5', function(req, res, next) {
-        mongoose.model('Ws').find({"sensorid": "UCSCistern1", "blocoid": "5"}).sort({$natural:-1}).limit(5800).exec(function (err, ws) {
+        mongoose.model('Ws').find({"sensorid": "UCSCistern2", "blocoid": "0"}).sort({$natural:-1}).limit(5800).exec(function (err, ws) {
               if (err) {
                   return console.error(err);
               } else {
