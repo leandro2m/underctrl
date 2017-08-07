@@ -8,6 +8,26 @@ queue()
    //Start Transformations
 	var dataSet = apiData;
 	var dateFormat = d3.time.format("%m/%d/%Y %H:%M:%S");
+
+	lastpost = new Date(dataSet[0].datetime);
+	dataAtual = new Date();
+
+	//calcula a diferença de datas em horas
+	var diffHoras = Math.abs(dataAtual.getTime() - lastpost.getTime()) / 3600000;
+
+	var imgStatus = new Image();
+	var divImgNetwork = document.getElementById('imgNetwork');
+	imgStatus.onload = function() {
+	  divImgNetwork.appendChild(imgStatus);
+	};
+	if (diffHoras < 2) {
+		console.log("Diferença maior que 2 horas");
+		imgStatus.src = './images/online.png';
+	}
+	else {
+		console.log("Diferenca menor que 2 horas");
+		imgStatus.src = './images/offline.png';
+	}
 	
 	dataSet.forEach(function(d) {
 		d.datetime = dateFormat.parse(d.datetime);
@@ -57,11 +77,18 @@ queue()
 		
 	// ultima leitura Cisterna Bloco 5
 	sensorDim.filterAll();
-	sensorDim.filter(function(d) {return d === 'UCScistern1'});
-	blocoDim.filter(function(d) {return d == 5});
+	sensorDim.filter(function(d) {return d === 'UCSCistern2'});
+	blocoDim.filter(function(d) {return d == 0});
 	if (timeDim.top(1)[0] != null) {
-		var lastVolC2 = timeDim.top(1)[0].total;
-		var colorC2 = timeDim.top(1)[0].changecolor;
+			if (timeDim.top(1)[0].total == 3) {
+				var lastVolC2 = timeDim.top(1)[0].total;
+				var colorC2 = "#008100" 
+			}
+			else {
+				var lastVolC2 = timeDim.top(1)[0].total;
+				var colorC2 = timeDim.top(1)[0].changecolor;  
+			}
+		
 	}
 	else {
 		var lastVolC2 = 0;
