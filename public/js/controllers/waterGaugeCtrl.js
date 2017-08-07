@@ -83,8 +83,8 @@ queue()
 		
 	// ultima leitura Cisterna Bloco 5
 	sensorDim.filterAll();
-	sensorDim.filter(function(d) {return d === 'UCScistern1'});
-	blocoDim.filter(function(d) {return d == 5});
+	sensorDim.filter(function(d) {return d === 'UCSCistern2'});
+	blocoDim.filter(function(d) {return d == 0});
 	if (timeDim.top(1)[0] != null) {
 		var lastVolC2 = timeDim.top(1)[0].total;
 		var colorC2 = timeDim.top(1)[0].changecolor;
